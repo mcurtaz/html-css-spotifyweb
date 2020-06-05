@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+main{
+  height: calc(100vh - 90px);
+}
+
+/* clearfix */
+
+main::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav-laterale, .music{
+  float: left;
+}
+
+.nav-laterale{
+  /* debug */
+  background-color: blue;
+  height: 100%;
+  width: 250px;
+}
+
+.music{
+  width: calc(100% - 250px);
+  max-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  /* debug */
+  background-color: pink;
+  font-size: 40px;
+}
+
+.player{
+  height: 90px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  /* debug */
+  background-color: green;
+}
