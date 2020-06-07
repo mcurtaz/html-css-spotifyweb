@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+h2{
+  color: #fff;
+  margin-left: 10px;
+}
+
+
 h3{
   color: #fff;
 }
@@ -15,7 +21,7 @@ ul{
 }
 
 a{
-  color: #ccc;
+  color: #a3a3a3;
   text-decoration: none;
 }
 
@@ -33,6 +39,8 @@ a:hover{
   }
 
 }
+
+
 /*main*/
 
 main{
@@ -70,6 +78,10 @@ main::after{
   overflow-y: auto;
 }
 
+  /* parte superiore della barra di navigazione laterale*/
+
+  /* menu di navigazione */
+
 .nav-laterale nav>div:first-child{
   padding: 15px 10px;
 }
@@ -94,12 +106,14 @@ main::after{
 }
 
 .nav-laterale nav .menu li{
-  border-left: 2px solid black;
+  border-left: 2px solid transparent;
 }
 
 .nav-laterale nav .menu li:hover{
-  border-left: 2px solid green;
+  border-left: 2px solid #a2ef2e;
 }
+
+/* menu di navigazione playlist */
 
 #nav-playlist{
   margin-top: 15px;
@@ -119,12 +133,13 @@ main::after{
   height: 20px;
   line-height: 20px;
   text-align: center;
-  background-color: #ccc;
+  background-color: #a3a3a3;
   color: #000;
   vertical-align: middle;
   margin-right: 10px;
 }
 
+  /* parte inferiore con menu di login */
 
 #login{
   padding: 10px;
@@ -133,7 +148,7 @@ main::after{
 }
 
 #login hr{
-  border: 1px solid #ccc;
+  border: 1px solid #a3a3a3;
   margin: 10px 0;
 }
 
@@ -142,7 +157,7 @@ main::after{
   padding: 5px;
   border-radius: 50%;
   text-align: center;
-  background-color: #ccc;
+  background-color: #a3a3a3;
 }
 
 #login img[alt="download"]{
@@ -159,6 +174,12 @@ main::after{
   margin-left: 5px;
 }
 
+#login a:last-child:hover span{
+  cursor: text;
+  color: #a3a3a3;
+}
+
+  /* media queries per ridimensionare la barra, cambiare logo, riposizionare alcuni elementi e farne sparire altri */
 
 @media all and (max-width: 768px){
 
@@ -188,15 +209,29 @@ main::after{
   }
 }
 
+
+
 /* sezione centrale - selezione musica */
+
 
 .music{
   width: calc(100% - 250px);
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: darkblue;
+  background-color: #141922;
 }
+
+  /* media query per ridimensionare la parte centrale quando la barra laterale si riduce */
+
+@media all and (max-width: 768px){
+
+  .music{
+    width: calc(100% - 50px);
+  }
+
+}
+  /* barra col tasto upgrade */
 
 #barra-upgrade{
   height: 50px;
@@ -217,24 +252,18 @@ main::after{
   border-radius: 20px;
 }
 
-
-
-@media all and (max-width: 768px){
-
-  .music{
-    width: calc(100% - 50px);
-  }
-
+#barra-upgrade a span:hover{
+  transform: scale(1.05);
 }
 
 
-/* sezione con selezione della musica */
+/* sezione con gallerie di album e playlist per selezionare la musica  */
 
 #selezione{
   padding: 15px;
 }
 
-/* barra di navigazione superiore */
+  /* lista di link per la navigazione posizionati in alto */
 
 #selezione nav ul{
   display: flex;
@@ -244,6 +273,7 @@ main::after{
 
 #selezione nav li{
   padding: 10px 20px;
+  text-transform: uppercase;
 }
 
 #selezione nav li div{
@@ -253,17 +283,27 @@ main::after{
 }
 
 #selezione nav li a:hover div{
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #a2ef2e;
 }
 
-/* sezione centrale scelta musica */
+/* sezione centrale scelta musica con le gallerie di immagini */
+
+#selezione .selezione-blocco{
+  padding: 20px 0;
+}
+
+#selezione .selezione-blocco>span{
+  display: inline-block;
+  color: #a3a3a3;
+  padding: 10px 10px 0;
+}
 
 #selezione .row{
   padding: 15px 0;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline; /* baseline permette anche se il testo sotto l'immagine va su più righe le "card" rimangono allineate sull'asse verticale*/
 }
 
 #selezione .card:last-child{
@@ -278,6 +318,16 @@ main::after{
 
 #selezione .card img{
  width: 100%;
+}
+
+#selezione .card h4{
+  color: #fff;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+#selezione .card a:hover{
+  color:  #a3a3a3;
 }
 
 #selezione .card .img-wrapper{
@@ -302,7 +352,11 @@ main::after{
   filter: brightness(30%);
 }
 
-/* media query per ridimensionare le immagini */
+#selezione .selezione-blocco:last-child img{
+  border-radius: 50%;
+}
+
+/* media queries per ridimensionare le immagini */
 
 @media all and (max-width: 1300px) {
 
@@ -319,6 +373,10 @@ main::after{
   }
 
 }
+
+
+
+
 
 /*  barra player */
 
