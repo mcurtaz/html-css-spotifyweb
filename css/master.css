@@ -1,14 +1,42 @@
+/* common */
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+h3{
+  color: #fff;
+}
 
+ul{
+  list-style: none;
+}
+
+a{
+  color: #ccc;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #fff;
+}
+
+
+/* classi di supporto media queries */
+
+@media all and (max-width: 768px) {
+
+  .hidden-xs{
+    display: none;
+  }
+
+}
 /*main*/
 
 main{
-  height: calc(100vh - 90px);
+  height: calc(100vh - 80px);
 }
 
 /* clearfix */
@@ -30,22 +58,134 @@ main::after{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* debug */
-  background-color: blue;
+  background-color: #000;
   height: 100%;
   width: 250px;
 }
 
 .nav-laterale nav{
-  /* debug */
-  height: 100px;
-  background-color: darkred;
+  flex-grow: 2;
+  flex-shrink: 5;
+  min-height: 320px;
+  overflow-y: auto;
 }
 
-.nav-laterale>div{
-  /* debug */
-  height: 100px;
-  background-color: darkblue;
+.nav-laterale nav>div:first-child{
+  padding: 15px 10px;
+}
+
+.nav-laterale nav img[alt="logo"]{
+  width: 150px;
+}
+
+.nav-laterale nav img[alt="logo small"]{
+  display:none;
+  width: 30px;
+}
+
+.nav-laterale nav li{
+  padding: 5px 5px 5px 8px;
+}
+
+.menu li img{
+  margin-right: 5px;
+  width: 30px;
+  vertical-align: middle;
+}
+
+.nav-laterale nav .menu li{
+  border-left: 2px solid black;
+}
+
+.nav-laterale nav .menu li:hover{
+  border-left: 2px solid green;
+}
+
+#nav-playlist{
+  margin-top: 15px;
+}
+
+#nav-playlist li{
+  padding-left: 10px;
+}
+
+#nav-playlist li:nth-child(2){
+  margin: 6px 0;
+}
+
+#nav-playlist li:nth-child(2) div{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #ccc;
+  color: #000;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+
+#login{
+  padding: 10px;
+  overflow-y: hidden;
+  flex-shrink: 1;
+}
+
+#login hr{
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+#login .wrapper{
+  display: inline-block;
+  padding: 5px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #ccc;
+}
+
+#login img[alt="download"]{
+  width: 20px;
+  vertical-align: middle;
+}
+
+#login img[alt="profile"]{
+  width: 20px;
+  vertical-align: middle;
+}
+
+#login a span{
+  margin-left: 5px;
+}
+
+
+@media all and (max-width: 768px){
+
+  .nav-laterale{
+    width: 50px;
+  }
+
+  .music{
+    width: calc(100% - 50px);
+  }
+
+  .nav-laterale nav img[alt="logo small"]{
+    display: block;
+    width: 30px;
+  }
+
+  #login{
+    text-align: center;
+  }
+
+  #login hr{
+    display: none;
+  }
+
+  #login .wrapper{
+    margin-top: 10px;
+  }
 }
 
 /* sezione centrale - selezione musica */
@@ -53,19 +193,132 @@ main::after{
 .music{
   width: calc(100% - 250px);
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  /* debug */
-  background-color: pink;
-  font-size: 40px;
+  background-color: darkblue;
 }
 
-.music>div:first-child{
-  /* debug */
-  height: 80px;
-  background-color: lightblue;
+#barra-upgrade{
+  height: 50px;
+  background-color: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  align-items: center;
 }
 
+#barra-upgrade a span{
+  display: block;
+  padding: 6px 35px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+
+
+@media all and (max-width: 768px){
+
+  .music{
+    width: calc(100% - 50px);
+  }
+
+}
+
+
+/* sezione con selezione della musica */
+
+#selezione{
+  padding: 15px;
+}
+
+/* barra di navigazione superiore */
+
+#selezione nav ul{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#selezione nav li{
+  padding: 10px 20px;
+}
+
+#selezione nav li div{
+  width: 40px;
+  margin: 6px auto 0;
+  border-bottom: 2px solid transparent;
+}
+
+#selezione nav li a:hover div{
+  border-bottom: 2px solid green;
+}
+
+/* sezione centrale scelta musica */
+
+#selezione .row{
+  padding: 15px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#selezione .card:last-child{
+  margin-right: auto;
+}
+
+#selezione .card{
+  padding: 10px;
+  width: calc(100% / 6);
+  text-align: center;
+}
+
+#selezione .card img{
+ width: 100%;
+}
+
+#selezione .card .img-wrapper{
+ position: relative;
+}
+
+#selezione .card .fa-play-circle{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ color: #fff;
+ font-size: 40px;
+ display: none;
+}
+
+#selezione .card .img-wrapper:hover .fa-play-circle{
+  display: block;
+}
+
+#selezione .card .img-wrapper:hover img{
+  filter: brightness(30%);
+}
+
+/* media query per ridimensionare le immagini */
+
+@media all and (max-width: 1300px) {
+
+  #selezione .card{
+    width: 25%;
+  }
+
+}
+
+@media all and (max-width: 800px) {
+
+  #selezione .card{
+    width: 50%;
+  }
+
+}
 
 /*  barra player */
 
@@ -73,7 +326,7 @@ main::after{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90px;
+  height: 80px;
   position: fixed;
   bottom: 0;
   left: 0;

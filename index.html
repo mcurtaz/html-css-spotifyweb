@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <link rel="stylesheet" href="css/master.css">
     <title>Spotify Web</title>
   </head>
@@ -13,21 +14,203 @@
       <aside class="nav-laterale">
         <!-- parte superiore con logo, menu e playlist -->
         <nav>
-          NAVBAR
+          <div>
+            <img class="hidden-xs" src="img/logo.svg" alt="logo">
+            <img src="img/logo-small.svg" alt="logo small">
+          </div>
+          <ul class="menu">
+            <li>
+              <a href="#">
+                <img src="img/home.svg" alt="home">
+                <span class="hidden-xs">Menu</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/search.svg" alt="search">
+                <span class="hidden-xs">Cerca</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/libreria.svg" alt="libreria">
+                <span class="hidden-xs">La Tua Libreria</span>
+              </a>
+            </li>
+          </ul>
+          <ul id="nav-playlist" class="hidden-xs">
+            <li><h3>Playlist</h3></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fas fa-plus"></i>
+                </div>
+                <span>Crea Playlist</span>
+              </a>
+            </li>
+            <li><a href="#">Nuova Playlist</a></li>
+            <li><a href="#">Nuova Playlist</a></li>
+            <li><a href="#">Nuova Playlist</a></li>
+            <li><a href="#">Nuova Playlist</a></li>
+            <li><a href="#">Nuova Playlist</a></li>
+          </ul>
         </nav>
         <!-- parte inferiore con il login utente -->
-        <div>
-          UTENTE
+        <div id="login">
+          <a href="#">
+            <img src="img/download.svg" alt="download">
+            <span class="hidden-xs">Installa App</span>
+          </a>
+          <hr>
+          <a href="#">
+            <div class="wrapper">
+              <img src="img/profile.svg" alt="profile">
+            </div>
+            <span class="hidden-xs">John Doe</span>
+          </a>
         </div>
       </aside>
       <div class="music">
         <!-- barra col tasto upgrade -->
-        <div>
-          BARRA UPGRADE
+        <div id="barra-upgrade">
+          <a href="#">
+            <span>Effettua l'upgrade</span>
+          </a>
         </div>
         <!-- parte centrale dove selezione la musica da riprodurre-->
-        <section>
-          SELEZIONE MUSICA
+        <section id="selezione">
+          <nav>
+            <ul>
+              <li>
+                <a href="#">
+                  <span>IN EVIDENZA</span>
+                  <div></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>IN EVIDENZA</span>
+                  <div></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>IN EVIDENZA</span>
+                  <div></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>IN EVIDENZA</span>
+                  <div></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>IN EVIDENZA</span>
+                  <div></div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="row">
+            <div class="card">
+              <div class="img-wrapper">
+                <a href="#">
+                  <img src="img/metal_lifting.jpg" alt="metal">
+                  <i class="far fa-play-circle"></i>
+                </a>
+              </div>
+              <a href="#">
+                <h4>Heavy Metal</h4>
+                <span>subtitle</span>
+              </a>
+            </div>
+            <div class="card">
+              <div class="img-wrapper">
+                <a href="#">
+                  <img src="img/metal_lifting.jpg" alt="metal">
+                  <i class="far fa-play-circle"></i>
+                </a>
+              </div>
+              <a href="#">
+                <h4>Heavy Metal</h4>
+                <span>subtitle</span>
+              </a>
+            </div>
+            <div class="card">
+              <div class="img-wrapper">
+                <a href="#">
+                  <img src="img/metal_lifting.jpg" alt="metal">
+                  <i class="far fa-play-circle"></i>
+                </a>
+              </div>
+              <a href="#">
+                <h4>Heavy Metal</h4>
+                <span>subtitle</span>
+              </a>
+            </div>
+            <div class="card">
+              <div class="img-wrapper">
+                <a href="#">
+                  <img src="img/metal_lifting.jpg" alt="metal">
+                  <i class="far fa-play-circle"></i>
+                </a>
+              </div>
+              <a href="#">
+                <h4>Heavy Metal</h4>
+                <span>subtitle</span>
+              </a>
+            </div>
+            <div class="card">
+              <div class="img-wrapper">
+                <a href="#">
+                  <img src="img/metal_lifting.jpg" alt="metal">
+                  <i class="far fa-play-circle"></i>
+                </a>
+              </div>
+              <a href="#">
+                <h4>Heavy Metal</h4>
+                <span>subtitle</span>
+              </a>
+            </div>
+            <div class="card">
+              <div class="img-wrapper">
+                <a href="#">
+                  <img src="img/metal_lifting.jpg" alt="metal">
+                  <i class="far fa-play-circle"></i>
+                </a>
+              </div>
+              <a href="#">
+                <h4>Heavy Metal</h4>
+                <span>subtitle</span>
+              </a>
+            </div>
+            <div class="card">
+              <div class="img-wrapper">
+                <a href="#">
+                  <img src="img/metal_lifting.jpg" alt="metal">
+                  <i class="far fa-play-circle"></i>
+                </a>
+              </div>
+              <a href="#">
+                <h4>Heavy Metal</h4>
+                <span>subtitle</span>
+              </a>
+            </div>
+            <div class="card">
+              <div class="img-wrapper">
+                <a href="#">
+                  <img src="img/metal_lifting.jpg" alt="metal">
+                  <i class="far fa-play-circle"></i>
+                </a>
+              </div>
+              <a href="#">
+                <h4>Heavy Metal</h4>
+                <span>subtitle</span>
+              </a>
+            </div>
+          </div>
         </section>
       </div>
     </main>
