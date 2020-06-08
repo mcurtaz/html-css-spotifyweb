@@ -16,6 +16,10 @@ h3{
   color: #fff;
 }
 
+h4{
+  color: #fff;
+}
+
 ul{
   list-style: none;
 }
@@ -380,7 +384,7 @@ main::after{
 
 /*  barra player */
 
-.player{
+#player{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -390,13 +394,38 @@ main::after{
   left: 0;
   z-index: 900;
   width: 100%;
-  /* debug */
-  background-color: green;
+  background-color: #282828;
 }
 
-.player>div{
-  /* debug */
-  height: 80%;
-  background-color: darkgreen;
+/* blocchetto sinistra del player */
+
+#player>div:first-child{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+#player>div:first-child img{
+  width: 50px;
+}
+
+#player>div:first-child .title{
+  padding: 10px 25px 10px 10px;
+  color: #a3a3a3;
+}
+
+#player>div:first-child .far{
+  padding-right: 10px;
+}
+
+/* media query per mandare le icone in colonna  */
+
+@media all and (max-width: 768px){
+
+  #player>div:first-child .far{
+    display: block;
+    padding: 5px 0;
+  }
 
 }
