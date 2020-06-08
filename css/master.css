@@ -91,7 +91,7 @@ main::after{
 }
 
 .nav-laterale nav img[alt="logo"]{
-  width: 150px;
+  width: 140px;
 }
 
 .nav-laterale nav img[alt="logo small"]{
@@ -141,6 +141,10 @@ main::after{
   color: #000;
   vertical-align: middle;
   margin-right: 10px;
+}
+
+#nav-playlist li:nth-child(2):hover div{
+  background-color: #fff;
 }
 
   /* parte inferiore con menu di login */
@@ -386,7 +390,7 @@ main::after{
 
 #player{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   height: 80px;
   position: fixed;
@@ -404,6 +408,7 @@ main::after{
   align-items: center;
   justify-content: flex-start;
   padding: 10px;
+  width: 25%;
 }
 
 #player>div:first-child img{
@@ -413,6 +418,11 @@ main::after{
 #player>div:first-child .title{
   padding: 10px 25px 10px 10px;
   color: #a3a3a3;
+}
+
+#player>div:first-child .title span:hover{
+  color: #fff;
+  text-decoration: underline;
 }
 
 #player>div:first-child .far{
@@ -428,4 +438,101 @@ main::after{
     padding: 5px 0;
   }
 
+}
+
+/* blocchetto centrale del player */
+
+#player>div:nth-child(2){
+  width: 50%;
+}
+
+#player .comandi{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#player .comandi [class*="fa-"]{
+  color: #fff;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+#player .comandi [class*="fa-"]:hover{
+  cursor: pointer;
+}
+
+#player .comandi .fa-play-circle{
+  font-size: 28px;
+}
+
+#player .comandi .fa-play-circle:hover{
+  transform: scale(1.2);
+}
+
+#player .player-navigazione{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.blocco-time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 10px;
+}
+
+.blocco-time>div:first-child{
+  position: relative;
+  width: 25%;
+  border-bottom: 4px solid #bcbcbc;
+  border-radius: 4px;
+}
+
+.blocco-time>div:first-child>div{
+  position: absolute;
+  left: 100%;
+  transform: translate(-50%, -25%);
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: none;
+}
+
+.blocco-time>div:last-child{
+  width: 75%;
+  border-bottom: 4px solid #585858;
+}
+
+.blocco-time>div:first-child:hover{
+  border-bottom: 4px solid #a2ef2e;
+  cursor: pointer;
+}
+
+.blocco-time>div:first-child:hover div{
+  display: block;
+}
+
+
+/* blocco dx del player */
+
+#player>div:last-child{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 25%;
+}
+
+#player>div:last-child .blocco-time{
+  width: 30%;
+}
+
+#player>div:last-child [class*="fa-"]{
+  font-size: 12px;
+  margin-left: 10px;
+  color: #fff;
 }

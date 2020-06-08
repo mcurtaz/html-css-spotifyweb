@@ -15,8 +15,8 @@
         <!-- parte superiore con logo, menu e playlist -->
         <nav>
           <div>
-            <img class="hidden-xs" src="img/logo.svg" alt="logo">
-            <img src="img/logo-small.svg" alt="logo small">
+            <a href="#"><img class="hidden-xs" src="img/logo.svg" alt="logo"></a>
+            <a href="#"><img src="img/logo-small.svg" alt="logo small"></a>
           </div>
           <ul class="menu">
             <li>
@@ -268,20 +268,44 @@
     <section id="player">
       <div>
         <img src="img/player_left.jpg" alt="Playing Now">
-        <div class="title">
+        <a href="" class="title">
           <h4>Sinister</h4>
           <span>Nome brano</span>
-        </div>
+        </a>
         <div>
           <a href="#"><i class="far fa-heart"></i></a>
           <a href="#"><i class="far fa-folder"></i></a>
         </div>
       </div>
       <div>
-        COMANDI PLAYER
+        <div class="comandi">
+          <i class="fas fa-random"></i>
+          <i class="fas fa-step-backward"></i>
+          <i class="far fa-play-circle"></i>
+          <i class="fas fa-step-forward"></i>
+          <i class="fas fa-redo-alt"></i>
+        </div>
+        <div class="player-navigazione">
+          <span>0:25</span>
+          <div class="blocco-time">
+            <div>
+              <div></div>
+            </div>
+            <div></div>
+          </div>
+          <span>0:45</span>
+        </div>
       </div>
       <div>
-        VOLUME
+        <i class="fas fa-list-ul"></i>
+        <i class="fas fa-desktop"></i>
+        <i class="fas fa-volume-up"></i>
+        <div class="blocco-time">
+          <div>
+            <div></div>
+          </div>
+          <div></div>
+        </div>
       </div>
     </section>
   </body>
