@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap');
+
 /* common */
 
 *{
@@ -6,13 +8,20 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Muli', sans-serif;
+}
+
 h2{
   color: #fff;
   margin-left: 10px;
+  font-size: 24px;
+  font-weight: 800;
 }
 
 
 h3{
+  font-size: 18px;
   color: #fff;
 }
 
@@ -22,6 +31,7 @@ h4{
 
 ul{
   list-style: none;
+  font-size: 14px;
 }
 
 a{
@@ -91,7 +101,7 @@ main::after{
 }
 
 .nav-laterale nav img[alt="logo"]{
-  width: 140px;
+  width: 120px;
 }
 
 .nav-laterale nav img[alt="logo small"]{
@@ -105,7 +115,7 @@ main::after{
 
 .menu li img{
   margin-right: 5px;
-  width: 30px;
+  width: 25px;
   vertical-align: middle;
 }
 
@@ -153,6 +163,7 @@ main::after{
   padding: 10px;
   overflow-y: hidden;
   flex-shrink: 1;
+  font-size: 14px;
 }
 
 #login hr{
@@ -182,9 +193,13 @@ main::after{
   margin-left: 5px;
 }
 
+#login a:last-child span{
+  color: #fff;
+  font-weight: bold;
+}
+
 #login a:last-child:hover span{
   cursor: text;
-  color: #a3a3a3;
 }
 
   /* media queries per ridimensionare la barra, cambiare logo, riposizionare alcuni elementi e farne sparire altri */
@@ -252,11 +267,12 @@ main::after{
 
 #barra-upgrade a span{
   display: block;
-  padding: 6px 35px;
+  padding: 5px 28px;
   border: 1px solid #fff;
   color: #fff;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: bold;
   border-radius: 20px;
 }
 
@@ -274,6 +290,8 @@ main::after{
   /* lista di link per la navigazione posizionati in alto */
 
 #selezione nav ul{
+  font-size: 13px;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -409,10 +427,11 @@ main::after{
   justify-content: flex-start;
   padding: 10px;
   width: 25%;
+  font-size: 13px;
 }
 
 #player>div:first-child img{
-  width: 50px;
+  width: 40px;
 }
 
 #player>div:first-child .title{
@@ -454,7 +473,7 @@ main::after{
 #player .comandi [class*="fa-"]{
   color: #fff;
   margin: 0 10px;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 #player .comandi [class*="fa-"]:hover{
@@ -462,7 +481,7 @@ main::after{
 }
 
 #player .comandi .fa-play-circle{
-  font-size: 28px;
+  font-size: 22px;
 }
 
 #player .comandi .fa-play-circle:hover{
@@ -472,7 +491,7 @@ main::after{
 #player .player-navigazione{
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  padding-top: 5px;
   color: #fff;
   font-size: 13px;
 }
@@ -481,7 +500,7 @@ main::after{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 45%;
   margin: 0 10px;
 }
 
@@ -535,4 +554,8 @@ main::after{
   font-size: 12px;
   margin-left: 10px;
   color: #fff;
+}
+
+#player>div:last-child [class*="fa-"]:hover{
+  cursor: pointer;
 }
