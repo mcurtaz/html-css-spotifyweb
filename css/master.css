@@ -83,14 +83,18 @@ main::after{
   background-color: #000;
   height: 100%;
   width: 250px;
+  overflow-y: hidden;
 }
 
 .nav-laterale nav{
+  /* con flex grow la barra di navigazione occupa tutto lo spazio libero sottostante */
   flex-grow: 2;
   flex-shrink: 5;
+  /* con min-height quando si accorcia il viewport verticale la navbar mantiene un altezza a scapito degli altri elementi (il blocco login sottostante) */
   min-height: 320px;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
+
 
   /* parte superiore della barra di navigazione laterale*/
 
@@ -98,6 +102,7 @@ main::after{
 
 .nav-laterale nav>div:first-child{
   padding: 15px 10px;
+  height: 70px;
 }
 
 .nav-laterale nav img[alt="logo"]{
@@ -105,12 +110,17 @@ main::after{
 }
 
 .nav-laterale nav img[alt="logo small"]{
-  display:none;
+  display: none;
   width: 30px;
 }
 
 .nav-laterale nav li{
   padding: 5px 5px 5px 8px;
+}
+
+.nav-laterale .menu{
+  padding-bottom: 15px;
+  height: 120px;
 }
 
 .menu li img{
@@ -130,7 +140,9 @@ main::after{
 /* menu di navigazione playlist */
 
 #nav-playlist{
-  margin-top: 15px;
+  /* lo scroll verticale funziona solo con altezza espressa in percentuale. Quindi ho dato a tutti i blocchi della navbar altezza fissa. 70 al logo 120 al menu. Height è quindi il 100% (che con flex grow è tutta l'altezza di nav fino al blocco login) - le due altezze. */
+  height: calc(100% - 70px - 120px);
+  overflow-y: auto;
 }
 
 #nav-playlist li{
@@ -231,7 +243,6 @@ main::after{
     margin-top: 10px;
   }
 }
-
 
 
 /* sezione centrale - selezione musica */
