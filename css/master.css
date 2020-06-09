@@ -559,3 +559,56 @@ main::after{
 #player>div:last-child [class*="fa-"]:hover{
   cursor: pointer;
 }
+
+
+/* media queries per ridimensionare il player in width xs */
+
+@media screen and (max-width: 500px){
+
+  #player>div:first-child{
+    width: 30%;
+  }
+
+  #player>div:first-child .title{
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  #player>div:first-child img{
+    width: 30px;
+  }
+
+  #player>div:nth-child(2){
+    width: 50%;
+  }
+
+  #player>div:nth-child(2) span{
+    font-size: 10px;
+  }
+
+  #player>div:nth-child(2) .blocco-time{
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+
+  #player .comandi [class*="fa-"]{
+    color: #fff;
+    margin: 0 5px;
+    font-size: 12px;
+  }
+
+  #player>div:last-child{
+    justify-content: flex-start;
+    width: 20%;
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 40px;
+  }
+
+  #player>div:last-child .blocco-time{
+    flex-grow: 2;
+  }
+
+
+}
