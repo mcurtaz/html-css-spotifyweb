@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <title>Spotify Web</title>
+  </head>
+  <body>
+    <!-- corpo principale della pagina dimensioni massime 100% del vh meno la barra player sottostante: barra di navigazione e blocco con la selezione dalla musica in float left.-->
+    <main>
+      <!-- barra laterale -->
+      <aside class="nav-laterale">
+        <!-- parte superiore con logo, menu e playlist -->
+        <nav>
+          <div>
+            <a href="#"><img class="hidden-xs" src="img/logo.svg" alt="logo"></a>
+            <a href="#"><img src="img/logo-small.svg" alt="logo small"></a>
+          </div>
+          <ul class="menu">
+            <li>
+              <a href="#">
+                <img src="img/home.svg" alt="home">
+                <span class="hidden-xs">Menu</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/search.svg" alt="search">
+                <span class="hidden-xs">Cerca</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/libreria.svg" alt="libreria">
+                <span class="hidden-xs">La Tua Libreria</span>
+              </a>
+            </li>
+          </ul>
+          <div id="nav-playlist">
+            <ul class="hidden-xs">
+              <li><h3>Playlist</h3></li>
+              <li>
+                <a href="#">
+                  <div>
+                    <i class="fas fa-plus"></i>
+                  </div>
+                  <span>Crea Playlist</span>
+                </a>
+              </li>
+              <li><a href="#">Nuova Playlist</a></li>
+              <li><a href="#">Nuova Playlist</a></li>
+              <li><a href="#">Nuova Playlist</a></li>
+              <li><a href="#">Nuova Playlist</a></li>
+              <li><a href="#">Nuova Playlist</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- parte inferiore con il login utente -->
+        <div id="login">
+          <a href="#">
+            <img src="img/download.svg" alt="download">
+            <span class="hidden-xs">Installa App</span>
+          </a>
+          <hr>
+          <a href="#">
+            <div class="wrapper">
+              <img src="img/profile.svg" alt="profile">
+            </div>
+            <span class="hidden-xs">John Doe</span>
+          </a>
+        </div>
+      </aside>
+      <div class="music">
+        <!-- barra col tasto upgrade -->
+        <div id="barra-upgrade">
+          <a href="#">
+            <span>Effettua l'upgrade</span>
+          </a>
+        </div>
+        <!-- parte centrale dove selezionare la musica da riprodurre-->
+        <section id="selezione">
+          <!-- barra di navigazione superiore -->
+          <nav>
+            <ul>
+              <li>
+                <a href="#">
+                  <span>IN EVIDENZA</span>
+                  <div></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>classifiche</span>
+                  <div></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>podcast</span>
+                  <div></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>generi</span>
+                  <div></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Scopri</span>
+                  <div></div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- blocchi con titolo e galleria di album/playlist -->
+          <div class="selezione-blocco">
+            <h2>Recently Played</h2>
+            <!-- galleria di album/playlist -->
+            <div class="row">
+              <!-- card con immagine titolo e autore -->
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/metal_lifting.jpg" alt="metal">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>Heavy Metal</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+              <!-- card con immagine titolo e autore -->
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/stranger.jpeg" alt="stranger">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>Stranger Things Vol.1</h4>
+                  <span>Netflix</span>
+                </a>
+              </div>
+              <!-- card con immagine titolo e autore -->
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/aquietplace.jpeg" alt="Quiet Place">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>A Quiet Place</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+              <!-- card con immagine titolo e autore -->
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/split.jpeg" alt="Split">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>Split</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+              <!-- card con immagine titolo e autore -->
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/cure.jpeg" alt="Cure">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>A Cure For Wellness</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+              <!-- card con immagine titolo e autore -->
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/sinister.jpeg" alt="Sinister">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>Sinister</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- blocchi con titolo e galleria di album/playlist -->
+          <div class="selezione-blocco">
+            <h2>Creato per John Doe</h2>
+            <span>Più ascolti, più accurati saranno i suggerimenti.</span>
+            <div class="row">
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/radar.jpeg" alt="radar">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>Radar</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/mixdaily.jpeg" alt="Daily Mix">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>Daily Mix</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- blocchi con titolo e galleria di album/playlist -->
+          <div class="selezione-blocco">
+            <h2>Creato per John Doe</h2>
+            <span>Più ascolti, più accurati saranno i suggerimenti.</span>
+            <div class="row">
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/youg.jpeg" alt="young">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>Young and Beautiful</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+              <div class="card">
+                <div class="img-wrapper">
+                  <a href="#">
+                    <img src="img/einaudi.jpeg" alt="Einaudi">
+                    <i class="far fa-play-circle"></i>
+                  </a>
+                </div>
+                <a href="#">
+                  <h4>Daily Mix</h4>
+                  <span>subtitle</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- barra inferiore con player -->
+    <section id="player">
+      <div>
+        <img src="img/player_left.jpg" alt="Playing Now">
+        <a href="" class="title">
+          <h4>Sinister</h4>
+          <span>Nome brano</span>
+        </a>
+        <div>
+          <a href="#"><i class="far fa-heart"></i></a>
+          <a href="#"><i class="far fa-folder"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="comandi">
+          <i class="fas fa-random"></i>
+          <i class="fas fa-step-backward"></i>
+          <i class="far fa-play-circle"></i>
+          <i class="fas fa-step-forward"></i>
+          <i class="fas fa-redo-alt"></i>
+        </div>
+        <div class="player-navigazione">
+          <span>0:25</span>
+          <div class="blocco-time">
+            <div>
+              <div></div>
+            </div>
+            <div></div>
+          </div>
+          <span>0:45</span>
+        </div>
+      </div>
+      <div>
+        <i class="fas fa-list-ul"></i>
+        <i class="fas fa-desktop"></i>
+        <i class="fas fa-volume-up"></i>
+        <div class="blocco-time">
+          <div>
+            <div></div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

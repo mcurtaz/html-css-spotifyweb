@@ -1,0 +1,648 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap');
+
+/* common */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Muli', sans-serif;
+}
+
+h2{
+  color: #fff;
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+
+h3{
+  font-size: 18px;
+  color: #fff;
+}
+
+h4{
+  color: #fff;
+}
+
+ul{
+  list-style: none;
+  font-size: 14px;
+}
+
+a{
+  color: #a3a3a3;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #fff;
+}
+
+
+/* classi di supporto media queries */
+
+@media all and (max-width: 768px) {
+
+  .hidden-xs{
+    display: none;
+  }
+
+}
+
+
+/*main*/
+
+main{
+  height: calc(100vh - 80px);
+}
+
+/* clearfix */
+
+main::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav-laterale, .music{
+  float: left;
+}
+
+
+/* aside- barra laterale */
+
+.nav-laterale{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000;
+  height: 100%;
+  width: 250px;
+  overflow-y: hidden;
+}
+
+.nav-laterale nav{
+  /* con flex grow la barra di navigazione occupa tutto lo spazio libero sottostante */
+  flex-grow: 2;
+  flex-shrink: 5;
+  /* con min-height quando si accorcia il viewport verticale la navbar mantiene un altezza a scapito degli altri elementi (il blocco login sottostante) */
+  min-height: 320px;
+  overflow-y: hidden;
+}
+
+
+  /* parte superiore della barra di navigazione laterale*/
+
+  /* menu di navigazione */
+
+.nav-laterale nav>div:first-child{
+  padding: 15px 10px;
+  height: 70px;
+}
+
+.nav-laterale nav img[alt="logo"]{
+  width: 120px;
+}
+
+.nav-laterale nav img[alt="logo small"]{
+  display: none;
+  width: 30px;
+}
+
+.nav-laterale nav li{
+  padding: 5px 5px 5px 8px;
+}
+
+.nav-laterale .menu{
+  padding-bottom: 15px;
+  height: 120px;
+}
+
+.menu li img{
+  margin-right: 5px;
+  width: 25px;
+  vertical-align: middle;
+}
+
+.nav-laterale nav .menu li{
+  border-left: 2px solid transparent;
+}
+
+.nav-laterale nav .menu li:hover{
+  border-left: 2px solid #a2ef2e;
+}
+
+/* menu di navigazione playlist */
+
+#nav-playlist{
+  /* lo scroll verticale funziona solo con altezza espressa in percentuale. Quindi ho dato a tutti i blocchi della navbar altezza fissa. 70 al logo 120 al menu. Height è quindi il 100% (che con flex grow è tutta l'altezza di nav fino al blocco login) - le due altezze. */
+  height: calc(100% - 70px - 120px);
+  overflow-y: auto;
+}
+
+#nav-playlist li{
+  padding-left: 10px;
+}
+
+#nav-playlist li:nth-child(2){
+  margin: 6px 0;
+}
+
+#nav-playlist li:nth-child(2) div{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #a3a3a3;
+  color: #000;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#nav-playlist li:nth-child(2):hover div{
+  background-color: #fff;
+}
+
+  /* parte inferiore con menu di login */
+
+#login{
+  padding: 10px;
+  overflow-y: hidden;
+  flex-shrink: 1;
+  font-size: 14px;
+}
+
+#login hr{
+  border: 1px solid #a3a3a3;
+  margin: 10px 0;
+}
+
+#login .wrapper{
+  display: inline-block;
+  padding: 5px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #a3a3a3;
+}
+
+#login img[alt="download"]{
+  width: 20px;
+  vertical-align: middle;
+}
+
+#login img[alt="profile"]{
+  width: 20px;
+  vertical-align: middle;
+}
+
+#login a span{
+  margin-left: 5px;
+}
+
+#login a:last-child span{
+  color: #fff;
+  font-weight: bold;
+}
+
+#login a:last-child:hover span{
+  cursor: text;
+}
+
+  /* media queries per ridimensionare la barra, cambiare logo, riposizionare alcuni elementi e farne sparire altri */
+
+@media all and (max-width: 768px){
+
+  .nav-laterale{
+    width: 50px;
+  }
+
+  .music{
+    width: calc(100% - 50px);
+  }
+
+  .nav-laterale nav img[alt="logo small"]{
+    display: block;
+    width: 30px;
+  }
+
+  #login{
+    text-align: center;
+  }
+
+  #login hr{
+    display: none;
+  }
+
+  #login .wrapper{
+    margin-top: 10px;
+  }
+}
+
+
+/* sezione centrale - selezione musica */
+
+
+.music{
+  width: calc(100% - 250px);
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #141922;
+}
+
+  /* media query per ridimensionare la parte centrale quando la barra laterale si riduce */
+
+@media all and (max-width: 768px){
+
+  .music{
+    width: calc(100% - 50px);
+  }
+
+}
+  /* barra col tasto upgrade */
+
+#barra-upgrade{
+  height: 50px;
+  background-color: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  align-items: center;
+}
+
+#barra-upgrade a span{
+  display: block;
+  padding: 5px 28px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+
+#barra-upgrade a span:hover{
+  transform: scale(1.05);
+}
+
+/* bonus sparizione barra upgrade */
+
+@media screen and (max-height: 500px) {
+
+  #barra-upgrade{
+    display: none;
+  }
+
+}
+
+/* sezione con gallerie di album e playlist per selezionare la musica  */
+
+#selezione{
+  padding: 15px;
+}
+
+  /* lista di link per la navigazione posizionati in alto */
+
+#selezione nav ul{
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#selezione nav li{
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+#selezione nav li div{
+  width: 2px;
+  margin: 6px auto 0;
+  border-bottom: 2px solid transparent;
+  transition: width 0.2s ease-in-out;
+}
+
+/* BONUS */
+
+#selezione nav li a:hover div{
+  border-bottom: 2px solid #a2ef2e;
+  width: 40px;
+}
+
+
+/* sezione centrale scelta musica con le gallerie di immagini */
+
+#selezione .selezione-blocco{
+  padding: 20px 0;
+}
+
+#selezione .selezione-blocco>span{
+  display: inline-block;
+  color: #a3a3a3;
+  padding: 10px 10px 0;
+}
+
+#selezione .row{
+  padding: 15px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: baseline; /* baseline permette anche se il testo sotto l'immagine va su più righe le "card" rimangono allineate sull'asse verticale*/
+
+/* BONUS overflow hidden per e no wrap per non fare andare a capo le immagini e non creare scrollbar orizzontali */
+  overflow-x: hidden;
+}
+
+#selezione .card:last-child{
+  margin-right: auto;
+}
+
+#selezione .card{
+  padding: 10px;
+  /* BONUS min-width invece di width rende determinate le dimensioni delle immagini */
+  min-width: calc(100% / 6);
+  max-width: calc(100% / 6);
+  text-align: center;
+}
+
+#selezione .card img{
+ width: 100%;
+ transition: all 0.4s;
+}
+
+#selezione .card h4{
+  color: #fff;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+#selezione .card a:hover{
+  color:  #a3a3a3;
+}
+
+#selezione .card .img-wrapper{
+ position: relative;
+}
+
+#selezione .card .fa-play-circle{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ color: #fff;
+ font-size: 40px;
+ display: none;
+}
+
+#selezione .card .img-wrapper:hover .fa-play-circle{
+  display: block;
+}
+
+#selezione .card .img-wrapper:hover img{
+  filter: brightness(30%);
+}
+
+#selezione .selezione-blocco:last-child img{
+  border-radius: 50%;
+}
+
+/* media queries per ridimensionare le immagini */
+
+@media all and (max-width: 1300px) {
+
+  #selezione .card{
+    min-width: 25%;
+    max-width: 25%;
+  }
+
+}
+
+@media all and (max-width: 800px) {
+
+  #selezione .card{
+    min-width: 50%;
+    max-width: 50%;
+  }
+
+}
+
+
+
+
+
+/*  barra player */
+
+#player{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  background-color: #282828;
+}
+
+/* blocchetto sinistra del player */
+
+#player>div:first-child{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 25%;
+  font-size: 13px;
+}
+
+#player>div:first-child img{
+  width: 40px;
+}
+
+#player>div:first-child .title{
+  padding: 10px 25px 10px 10px;
+  color: #a3a3a3;
+}
+
+#player>div:first-child .title span:hover{
+  color: #fff;
+  text-decoration: underline;
+}
+
+#player>div:first-child .far{
+  padding-right: 10px;
+}
+
+/* media query per mandare le icone in colonna  */
+
+@media all and (max-width: 768px){
+
+  #player>div:first-child .far{
+    display: block;
+    padding: 5px 0;
+  }
+
+}
+
+/* blocchetto centrale del player */
+
+#player>div:nth-child(2){
+  width: 50%;
+}
+
+#player .comandi{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#player .comandi [class*="fa-"]{
+  color: #fff;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+#player .comandi [class*="fa-"]:hover{
+  cursor: pointer;
+}
+
+#player .comandi .fa-play-circle{
+  font-size: 22px;
+}
+
+#player .comandi .fa-play-circle:hover{
+  transform: scale(1.2);
+}
+
+#player .player-navigazione{
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.blocco-time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  margin: 0 10px;
+}
+
+.blocco-time>div:first-child{
+  position: relative;
+  width: 25%;
+  border-bottom: 4px solid #bcbcbc;
+  border-radius: 4px;
+}
+
+.blocco-time>div:first-child>div{
+  position: absolute;
+  left: 100%;
+  transform: translate(-50%, -25%);
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: none;
+}
+
+.blocco-time>div:last-child{
+  width: 75%;
+  border-bottom: 4px solid #585858;
+}
+
+.blocco-time>div:first-child:hover{
+  border-bottom: 4px solid #a2ef2e;
+  cursor: pointer;
+}
+
+.blocco-time>div:first-child:hover div{
+  display: block;
+}
+
+
+/* blocco dx del player */
+
+#player>div:last-child{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 25%;
+}
+
+#player>div:last-child .blocco-time{
+  width: 30%;
+}
+
+#player>div:last-child [class*="fa-"]{
+  font-size: 12px;
+  margin-left: 10px;
+  color: #fff;
+}
+
+#player>div:last-child [class*="fa-"]:hover{
+  cursor: pointer;
+}
+
+
+/* media queries per ridimensionare il player in width xs */
+
+@media screen and (max-width: 500px){
+
+  #player>div:first-child{
+    width: 30%;
+  }
+
+  #player>div:first-child .title{
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  #player>div:first-child img{
+    width: 30px;
+  }
+
+  #player>div:nth-child(2){
+    width: 50%;
+  }
+
+  #player>div:nth-child(2) span{
+    font-size: 10px;
+  }
+
+  #player>div:nth-child(2) .blocco-time{
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+
+  #player .comandi [class*="fa-"]{
+    color: #fff;
+    margin: 0 5px;
+    font-size: 12px;
+  }
+
+  #player>div:last-child{
+    justify-content: flex-start;
+    width: 20%;
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 40px;
+  }
+
+  #player>div:last-child .blocco-time{
+    flex-grow: 2;
+  }
+
+
+}
